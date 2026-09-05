@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ setSearch }) => {
+const Navbar = ({ setSearch, cart, setIsCartOpen, username, setIsLoginOpen }) => {
     return (
         <div>
             <div className='flex w-full items-center justify-center gap-40 h-25 border-b-[1px] border-gray-500'>
@@ -13,18 +13,25 @@ const Navbar = ({ setSearch }) => {
                     <input type="text" className='w-160  focus:outline-none ' placeholder="I'm looking for..." onChange={(e) => setSearch(e.target.value)} />
                 </div>
                 <div className='flex gap-10'>
-                    <div className='flex flex-col items-center'>
+                    <button
+                        onClick={() => setIsLoginOpen(true)}
+                        className='flex flex-col items-center cursor-pointer'
+                    >
                         <img src="/user-icon.png" width={'30px'} alt="" />
-                        <p>Log in</p>
-                    </div>
-                    <div className='flex flex-col items-center'>
-                        <img src="/like.png" width={'30px'} alt="" />
-                        <p>Favourites</p>
-                    </div>
-                    <div className='flex flex-col items-center'>
+                        <p>{username || 'Log in'}</p>
+                    </button>
+                    <button
+                        onClick={() => setIsCartOpen(true)}
+                        className='relative flex flex-col items-center cursor-pointer'
+                    >
                         <img src="/basket.png" width={'30px'} alt="" />
                         <p>Basket</p>
-                    </div>
+                        {cart.length > 0 && (
+                            <span className="absolute -top-2 -right-2 bg-red-800 text-white rounded-full w-5 h-5 text-sm">
+                                {cart.length}
+                            </span>
+                        )}
+                    </button>
                 </div>
             </div>
             <div className='flex gap-15 justify-center my-7'>

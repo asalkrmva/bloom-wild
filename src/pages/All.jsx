@@ -5,7 +5,11 @@ import AboutPage from '../components/AboutPage';
 import FilterBtn from '../components/FilterBtn';
 import Reviews from '../components/Reviews';
 
-const All = ({ search }) => {
+const All = ({ search,
+  cart,
+  addToCart,
+  isLoggedIn,
+  setIsLoginOpen }) => {
   const [filter, setFilter] = useState();
 
   return (
@@ -14,7 +18,13 @@ const All = ({ search }) => {
         <AboutPage title='Our full collection' />
       </div>
       <FilterBtn setFilter={setFilter} />
-      <Card filter={filter} search={search} />
+      <Card
+        filter={filter}
+        search={search}
+        cart={cart}
+        addToCart={addToCart}
+        isLoggedIn={isLoggedIn}
+        setIsLoginOpen={setIsLoginOpen} />
       <Reviews />
     </div>
   );
