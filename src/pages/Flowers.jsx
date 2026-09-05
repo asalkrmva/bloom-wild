@@ -18,7 +18,7 @@ const Flowers = ({ search,
           <AboutPage title='Fresh flowers & bouquets' text="Don't just send flowers, care wildly. From our famous long-lasting letterbox flowers, to seasonal bunches, and luxe hand-tied bouquets. Our stems are carefully sourced from trusted growers, and sent fresh in bud so they last way longer than regular flowers." />
         </div>
       </div>
-      <FilterBtn setFilter={setFilter} />
+      <FilterBtn setFilter={setFilter} filter={filter} />
       <FlowerCard
         search={search}
         cart={cart}

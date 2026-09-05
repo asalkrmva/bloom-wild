@@ -18,7 +18,7 @@ const Plants = ({ search,
           <AboutPage title='Plant gifts' text="Brighten their day with plant delivery made easy. Explore plant gifts and plants by post for new homes, thank yous, get well wishes and more." />
         </div>
       </div>
-      <FilterBtn setFilter={setFilter} />
+      <FilterBtn setFilter={setFilter} filter={filter} />
       <FlowerCard
         search={search}
         cart={cart}

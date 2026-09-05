@@ -18,7 +18,7 @@ const Birthday = ({ search,
           <AboutPage title='Birthday Gifts' text='Every birthday is a big birthday in our book. Send them something to mark the occasion with our letterbox birthday gifts, carefully curated for your faves to enjoy.' />
         </div>
       </div>
-      <FilterBtn setFilter={setFilter} />
+      <FilterBtn setFilter={setFilter} filter={filter} />
       <BirthdayCard
         search={search}
         cart={cart}

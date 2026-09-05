@@ -18,7 +18,7 @@ const Food = ({ search,
           <AboutPage title='Food & drink gifts' text="Not sure if they're a wine person, a cake person, or a cheese-before-dessert person? Good news - you don't have to choose. Our food and drink gifts cover all three, and everything in between. From letterbox treats to indulgent deli-style hampers, we make, bake and hand-pick every morsel from British brands and small sustainable makers. Sent with free next-day delivery across the UK." />
         </div>
       </div>
-      <FilterBtn setFilter={setFilter} />
+      <FilterBtn setFilter={setFilter} filter={filter} />
       <FoodCard
         search={search}
         cart={cart}
