@@ -4,7 +4,11 @@ import FilterBtn from '../components/FilterBtn';
 import FoodCard from '../components/cards/FoodCard';
 import Reviews from '../components/Reviews';
 
-const Food = ({ search }) => {
+const Food = ({ search,
+  cart,
+  addToCart,
+  isLoggedIn,
+  setIsLoginOpen }) => {
   const [filter, setFilter] = useState();
 
   return (
@@ -15,7 +19,12 @@ const Food = ({ search }) => {
         </div>
       </div>
       <FilterBtn setFilter={setFilter} />
-      <FoodCard filter={filter} search={search} />
+      <FoodCard
+        search={search}
+        cart={cart}
+        addToCart={addToCart}
+        isLoggedIn={isLoggedIn}
+        setIsLoginOpen={setIsLoginOpen} />
       <Reviews />
     </div>
   );

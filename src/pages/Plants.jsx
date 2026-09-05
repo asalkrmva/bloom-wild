@@ -4,7 +4,11 @@ import FilterBtn from '../components/FilterBtn';
 import FlowerCard from '../components/cards/FlowerCard';
 import Reviews from '../components/Reviews';
 
-const Plants = ({ search }) => {
+const Plants = ({ search,
+  cart,
+  addToCart,
+  isLoggedIn,
+  setIsLoginOpen }) => {
   const [filter, setFilter] = useState();
 
   return (
@@ -15,7 +19,12 @@ const Plants = ({ search }) => {
         </div>
       </div>
       <FilterBtn setFilter={setFilter} />
-      <FlowerCard filter={filter} search={search} />
+      <FlowerCard
+        search={search}
+        cart={cart}
+        addToCart={addToCart}
+        isLoggedIn={isLoggedIn}
+        setIsLoginOpen={setIsLoginOpen} />
       <Reviews />
     </div>
   );
