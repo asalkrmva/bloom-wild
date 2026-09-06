@@ -6,6 +6,7 @@ const PlantsCard = ({ filter,
     search,
     cart = [],
     addToCart,
+    removeFromCart,
     isLoggedIn,
     setIsLoginOpen }) => {
 
@@ -50,14 +51,16 @@ const PlantsCard = ({ filter,
                                 <p className='text-2xl font-semibold'>£{item.price}</p>
                                 <button
                                     onClick={() => {
-                                        if (isAdded) return;
-
                                         if (!isLoggedIn) {
                                             setIsLoginOpen(true);
                                             return;
                                         }
 
-                                        addToCart(item);
+                                        if (isAdded) {
+                                            removeFromCart(item.id);
+                                        } else {
+                                            addToCart(item);
+                                        }
                                     }}
                                     className={`px-10 py-4 rounded-[5px] cursor-pointer ${isAdded
                                             ? "bg-mauve-300 text-black"

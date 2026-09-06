@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 const Plants = ({ search,
   cart,
   addToCart,
+  removeFromCart,
   isLoggedIn,
   setIsLoginOpen }) => {
   const [filter, setFilter] = useState();
@@ -24,6 +25,7 @@ const Plants = ({ search,
         search={search}
         cart={cart}
         addToCart={addToCart}
+        removeFromCart={removeFromCart}
         isLoggedIn={isLoggedIn}
         setIsLoginOpen={setIsLoginOpen} />
       <Reviews />

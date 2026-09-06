@@ -4,7 +4,7 @@ const Basket = ({ cart, setIsCartOpen, removeFromCart, clearCart }) => {
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
 
-            <div className="bg-white w-[550px] min-h-[500px] rounded-lg p-8 relative flex flex-col justify-between">
+            <div className="bg-white w-[550px] min-h-[500px] max-h-[90vh] overflow-y-auto rounded-lg p-8 relative flex flex-col justify-between">
                 
                 <button
                     onClick={() => setIsCartOpen(false)}
@@ -16,7 +16,7 @@ const Basket = ({ cart, setIsCartOpen, removeFromCart, clearCart }) => {
                 <h2 className="text-3xl font-semibold font-serif">
                     Your Basket
                 </h2>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 py-1">
                     {cart.map((item) => (
                         <div
                             key={item.id}

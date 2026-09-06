@@ -49,15 +49,15 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/send-flowers' element={<All search={search} cart={cart} addToCart={addToCart}
           isLoggedIn={isLoggedIn}
-          setIsLoginOpen={setIsLoginOpen} />} />
+          setIsLoginOpen={setIsLoginOpen} removeFromCart={removeFromCart} />} />
         <Route path='/flowers' element={<Flowers search={search} cart={cart} addToCart={addToCart} isLoggedIn={isLoggedIn}
-          setIsLoginOpen={setIsLoginOpen}  />} />
+          setIsLoginOpen={setIsLoginOpen} removeFromCart={removeFromCart} />} />
         <Route path='/birthday' element={<Birthday search={search} cart={cart} addToCart={addToCart} isLoggedIn={isLoggedIn}
-          setIsLoginOpen={setIsLoginOpen}  />} />
+          setIsLoginOpen={setIsLoginOpen} removeFromCart={removeFromCart} />} />
         <Route path='/food&drink' element={<Food search={search} cart={cart} addToCart={addToCart} isLoggedIn={isLoggedIn}
-          setIsLoginOpen={setIsLoginOpen}  />} />
+          setIsLoginOpen={setIsLoginOpen} removeFromCart={removeFromCart} />} />
         <Route path='/plants' element={<Plants search={search} cart={cart} addToCart={addToCart} isLoggedIn={isLoggedIn}
-          setIsLoginOpen={setIsLoginOpen}  />} />
+          setIsLoginOpen={setIsLoginOpen} removeFromCart={removeFromCart} />} />
       </Routes>
       {isCartOpen && (
         <Basket

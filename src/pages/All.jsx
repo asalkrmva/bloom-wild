@@ -10,6 +10,7 @@ const All = ({ search,
   cart,
   addToCart,
   isLoggedIn,
+  removeFromCart,
   setIsLoginOpen }) => {
   const [filter, setFilter] = useState();
 
@@ -24,6 +25,7 @@ const All = ({ search,
         search={search}
         cart={cart}
         addToCart={addToCart}
+        removeFromCart={removeFromCart}
         isLoggedIn={isLoggedIn}
         setIsLoginOpen={setIsLoginOpen} />
       <Reviews />
