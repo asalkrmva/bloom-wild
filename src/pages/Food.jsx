@@ -3,6 +3,7 @@ import AboutPage from '../components/AboutPage';
 import FilterBtn from '../components/FilterBtn';
 import FoodCard from '../components/cards/FoodCard';
 import Reviews from '../components/Reviews';
+import Footer from '../components/Footer';
 
 const Food = ({ search,
   cart,
@@ -26,6 +27,7 @@ const Food = ({ search,
         isLoggedIn={isLoggedIn}
         setIsLoginOpen={setIsLoginOpen} />
       <Reviews />
+      <Footer />
     </div>
   );
 };

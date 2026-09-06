@@ -41,6 +41,7 @@ const Login = ({ setIsLoginOpen, login }) => {
                         placeholder="Username"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        maxLength={25}
                         className="border border-gray-400 rounded px-4 py-3"
                     />
 
@@ -49,12 +50,13 @@ const Login = ({ setIsLoginOpen, login }) => {
                         placeholder="Password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
+                        required
                         className="border border-gray-400 rounded px-4 py-3"
                     />
 
                     <button
                         type="submit"
-                        className="bg-black text-white py-3 rounded"
+                        className="bg-black text-white py-3 rounded cursor-pointer"
                     >
                         Log in
                     </button>

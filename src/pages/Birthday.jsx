@@ -3,6 +3,7 @@ import AboutPage from '../components/AboutPage';
 import FilterBtn from '../components/FilterBtn';
 import BirthdayCard from '../components/cards/BirthdayCard';
 import Reviews from '../components/Reviews';
+import Footer from '../components/Footer';
 
 const Birthday = ({ search,
   cart,
@@ -26,6 +27,7 @@ const Birthday = ({ search,
         isLoggedIn={isLoggedIn}
         setIsLoginOpen={setIsLoginOpen} />
       <Reviews />
+      <Footer />
     </div>
   );
 };

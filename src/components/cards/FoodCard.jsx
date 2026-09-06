@@ -26,7 +26,7 @@ const FoodCard = ({ filter,
     return (
         <div className='flex justify-center items-center'>
             <div className='grid grid-cols-3 gap-8'>
-                {sortedProducts.map((item) => {
+                {foods.map((item) => {
                     const isAdded = cart.some((cartItem) => cartItem.id === item.id);
 
                     return (

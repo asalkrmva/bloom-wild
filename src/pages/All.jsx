@@ -4,6 +4,7 @@ import Card from '../components/cards/Card';
 import AboutPage from '../components/AboutPage';
 import FilterBtn from '../components/FilterBtn';
 import Reviews from '../components/Reviews';
+import Footer from '../components/Footer';
 
 const All = ({ search,
   cart,
@@ -26,6 +27,7 @@ const All = ({ search,
         isLoggedIn={isLoggedIn}
         setIsLoginOpen={setIsLoginOpen} />
       <Reviews />
+      <Footer />
     </div>
   );
 };

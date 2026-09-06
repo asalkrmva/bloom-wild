@@ -65,13 +65,13 @@ const Basket = ({ cart, setIsCartOpen, removeFromCart, clearCart }) => {
                     </p>
                     <button
                         onClick={clearCart}
-                        className="border border-black px-6 py-3 rounded-[5px]"
+                        className="border border-black px-6 py-3 rounded-[5px] cursor-pointer"
                     >
                         Clear basket
                     </button>
                     <button
                         onClick={() => setIsCartOpen(false)}
-                        className="bg-black text-white px-8 py-3 rounded-[5px]"
+                        className="bg-black text-white px-8 py-3 rounded-[5px] cursor-pointer"
                     >
                         Continue shopping
                     </button>

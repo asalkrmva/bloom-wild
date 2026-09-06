@@ -3,6 +3,7 @@ import AboutPage from '../components/AboutPage';
 import FilterBtn from '../components/FilterBtn';
 import FlowerCard from '../components/cards/FlowerCard';
 import Reviews from '../components/Reviews';
+import Footer from '../components/Footer';
 
 const Flowers = ({ search,
   cart,
@@ -26,6 +27,7 @@ const Flowers = ({ search,
         isLoggedIn={isLoggedIn}
         setIsLoginOpen={setIsLoginOpen} />
       <Reviews />
+      <Footer />
     </div>
   );
 };

@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Birthday from './pages/Birthday';
 import Food from './pages/Food';
 import Plants from './pages/Plants';
-import CardShop from './pages/CardShop';
 import All from './pages/All';
 import Basket from './components/Basket';
 import Login from './components/Login';
@@ -21,13 +20,16 @@ const App = () => {
   const isLoggedIn = username !== '';
 
   function login(name, password) {
-    if (password === 'admin') {
+    if (password === 'bloomandwild') {
       setUsername(name);
       setIsLoginOpen(false);
     } else {
       alert('Wrong password');
     }
   }
+  function logout() {
+  setUsername('');
+}
   function addToCart(product) {
     setCart((prev) => [...prev, product]);
   }
@@ -42,7 +44,7 @@ const App = () => {
 
   return (
     <div>
-      <Navbar setSearch={setSearch} cart={cart} setIsCartOpen={setIsCartOpen} username={username} setIsLoginOpen={setIsLoginOpen} />
+      <Navbar setSearch={setSearch} cart={cart} setIsCartOpen={setIsCartOpen} username={username} setIsLoginOpen={setIsLoginOpen} logout={logout} />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/send-flowers' element={<All search={search} cart={cart} addToCart={addToCart}
@@ -56,7 +58,6 @@ const App = () => {
           setIsLoginOpen={setIsLoginOpen}  />} />
         <Route path='/plants' element={<Plants search={search} cart={cart} addToCart={addToCart} isLoggedIn={isLoggedIn}
           setIsLoginOpen={setIsLoginOpen}  />} />
-        {/* <Route path='/cardshop' element={<CardShop />} /> */}
       </Routes>
       {isCartOpen && (
         <Basket

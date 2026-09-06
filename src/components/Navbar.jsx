@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ setSearch, cart, setIsCartOpen, username, setIsLoginOpen }) => {
+const Navbar = ({ setSearch, cart, setIsCartOpen, username, setIsLoginOpen, logout }) => {
     return (
         <div>
             <div className='flex w-full items-center justify-center gap-40 h-25 border-b-[1px] border-gray-500'>
@@ -13,13 +13,30 @@ const Navbar = ({ setSearch, cart, setIsCartOpen, username, setIsLoginOpen }) =>
                     <input type="text" className='w-160  focus:outline-none ' placeholder="I'm looking for..." onChange={(e) => setSearch(e.target.value)} />
                 </div>
                 <div className='flex gap-10'>
-                    <button
-                        onClick={() => setIsLoginOpen(true)}
-                        className='flex flex-col items-center cursor-pointer'
-                    >
-                        <img src="/user-icon.png" width={'30px'} alt="" />
-                        <p>{username || 'Log in'}</p>
-                    </button>
+                    <div className="relative group">
+                        <button
+                            onClick={() => {
+                                if (!username) {
+                                    setIsLoginOpen(true);
+                                }
+                            }}
+                            className="flex flex-col items-center cursor-pointer"
+                        >
+                            <img src="/user-icon.png" width={'30px'} alt="" />
+                            <p>{username || 'Log in'}</p>
+                        </button>
+
+                        {username && (
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 hidden group-hover:block">
+                                <button
+                                    onClick={logout}
+                                    className="bg-white border border-gray-300 shadow-md px-4 py-2 rounded whitespace-nowrap cursor-pointer hover:bg-gray-100"
+                                >
+                                    Log out
+                                </button>
+                            </div>
+                        )}
+                    </div>
                     <button
                         onClick={() => setIsCartOpen(true)}
                         className='relative flex flex-col items-center cursor-pointer'
