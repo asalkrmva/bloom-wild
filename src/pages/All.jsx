@@ -7,6 +7,7 @@ import Reviews from '../components/Reviews';
 import Footer from '../components/Footer';
 
 const All = ({ search,
+  filter,
   cart,
   addToCart,
   isLoggedIn,

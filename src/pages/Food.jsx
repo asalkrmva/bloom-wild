@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 const Food = ({ search,
   cart,
   addToCart,
+  filter,
   removeFromCart,
   isLoggedIn,
   setIsLoginOpen }) => {

@@ -6,6 +6,7 @@ import Reviews from '../components/Reviews';
 import Footer from '../components/Footer';
 
 const Birthday = ({ search,
+  filter,
   cart,
   addToCart,
   removeFromCart,

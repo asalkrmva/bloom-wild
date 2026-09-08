@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 
 const Flowers = ({ search,
   cart,
+  filter,
   addToCart,
   removeFromCart,
   isLoggedIn,
