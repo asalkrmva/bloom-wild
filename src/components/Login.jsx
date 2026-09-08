@@ -12,13 +12,13 @@ const Login = ({ setIsLoginOpen, login }) => {
             return;
         }
 
-        login(name, password);
+        login(name.trim(), password);
     }
 
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
 
-            <div className="bg-white w-[400px] rounded-lg p-8 relative">
+            <div className="bg-white w-[90%] max-w-[400px] rounded-lg p-8 relative">
 
                 <button
                     onClick={() => setIsLoginOpen(false)}
@@ -41,7 +41,11 @@ const Login = ({ setIsLoginOpen, login }) => {
                         placeholder="Username"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        required
+                        minLength={3}
                         maxLength={25}
+                        pattern="[A-Za-z0-9_ ]+"
+                        title="Username must be 3-25 characters and can only contain letters, numbers, and underscores."
                         className="border border-gray-400 rounded px-4 py-3"
                     />
 
@@ -51,6 +55,10 @@ const Login = ({ setIsLoginOpen, login }) => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
+                        minLength={6}
+                        maxLength={30}
+                        pattern="\S+"
+                        title="Password cannot contain spaces."
                         className="border border-gray-400 rounded px-4 py-3"
                     />
 

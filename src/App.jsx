@@ -14,22 +14,24 @@ const App = () => {
   const [search, setSearch] = useState('');
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState(
+    localStorage.getItem('username') || ''
+  );
 
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const isLoggedIn = username !== '';
 
-  function login(name, password) {
-    if (password === 'bloomandwild') {
-      setUsername(name);
-      setIsLoginOpen(false);
-    } else {
-      alert('Wrong password');
-    }
+  function login(name) {
+    setUsername(name);
+    localStorage.setItem('username', name);
+    setIsLoginOpen(false);
   }
+
   function logout() {
-  setUsername('');
-}
+    setUsername('');
+    localStorage.removeItem('username');
+  }
+
   function addToCart(product) {
     setCart((prev) => [...prev, product]);
   }
