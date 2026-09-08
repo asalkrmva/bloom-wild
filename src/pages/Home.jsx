@@ -37,26 +37,28 @@ const Home = () => {
       </div>
 
       <Ad />
+      <div className='bg-pink-900 text-white mb-5'>
+        <div className='flex flex-col md:flex-row'>
 
-      <div className='bg-pink-900 px-5 md:px-10 lg:px-15 text-white pt-8 md:pt-10 mb-5'>
-        <div className='flex flex-col md:flex-row gap-8 lg:gap-15'>
-          <div className='w-full md:w-1/2 lg:w-140 flex flex-col justify-center items-center gap-5 py-8 md:py-0'>
+          <div className='w-full md:w-1/2 flex flex-col justify-center items-center gap-5 px-5 sm:px-10 lg:px-15 py-10 md:py-15'>
             <Title text="Something for every 'thank you'" />
-            <p className='text-center'>
+
+            <p className='text-center max-w-2xl'>
               It's your last chance to catch summer's best stems before the season ends.
               Good thing our flower deliveries are bursting with them.
             </p>
+
             <Button text='Shop now' />
           </div>
 
           <img
             src="/home/home.png"
-            className='w-full md:w-1/2 lg:w-[700px] h-auto object-cover'
+            className='w-full md:w-1/2 h-auto object-cover'
             alt=""
           />
+
         </div>
       </div>
-
       <AboutSection />
       <Footer />
     </div>
